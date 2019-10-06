@@ -1,3 +1,8 @@
+/*
+ * Three Points
+ * IUG 12019 
+ * Computer Graphics (Lab)
+ */
 #include <windows.h>
 #include <gl/Gl.h>
 #include <gl/glut.h>  //OpenGL Utility Toolkit for creating openGL window
