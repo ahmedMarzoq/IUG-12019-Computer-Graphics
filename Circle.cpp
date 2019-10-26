@@ -1,22 +1,11 @@
-// give it x1 & y1
-for (int i = 0; i < num; i++) {
-	glBegin(GL_POLYGON);
-	GLint x1 = random(width);
-	GLint y1 = random(height);
-
-
-	for (int ii = 0; ii < 1000; ii++) {
-		float theta = 2.0f * 3.1415926f * float(ii) / float(1000);//get the current angle
-		float x = (20 + i) * cosf(theta);//calculate the x component
-		float y = (20 + i) * sinf(theta);//calculate the y component
-		glVertex2f(x + x1, y + y1);//output vertex
+void DrawCircle(float cx, float cy, float r, int num_segments)
+{
+	glBegin(GL_LINE_LOOP);
+	for (float ii = 0; ii < num_segments; ii += .5)
+	{
+		GLfloat angle = ii * 0.0174533;
+		glVertex2f(cx, cy);//output vertex
+		glVertex2d(cx + (cos(angle) * r), cy + (sin(angle) * r));
 	}
-	GLfloat lev1 = random(10) / 10.0;
-	GLfloat lev2 = random(10) / 10.0;
-	GLfloat lev3 = random(10) / 10.0;
-	glColor3f(lev1, lev2, lev3);
 	glEnd();
-
-
 }
-glFlush();
